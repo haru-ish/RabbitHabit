@@ -1,0 +1,31 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rabbit+Habit&display=swap');
+
+h1 {
+  font-family: 'Rabbit Habit', cursive;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;800&family=Edu+VIC+WA+NT+Beginner:wght@500&display=swap');
+
+h1 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 800;
+  }
+
+  p {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    margin-top: 10px;
+  }
+  span {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-weight: 500;
+    color:rgb(9, 104, 37);
+  }
+  .firebaseui-idp-google>.firebaseui-idp-text {
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+}
