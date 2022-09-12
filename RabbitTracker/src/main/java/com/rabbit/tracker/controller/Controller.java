@@ -1,22 +1,13 @@
 package com.rabbit.tracker.controller;
 
 import java.security.Principal;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rabbit.tracker.entity.LogEntity;
@@ -29,11 +20,17 @@ public class Controller {
 
 	@Autowired
 	private LogService ls;
-
-	@GetMapping("/api/checkLoginStatus")
-	public String checkLoginStatus(Principal principal) {
-		// このuidをidと一緒にテーブルに追加すれば、ユーザの登録になる？
-		return principal.getName(); // Returns firebase uid
+    
+	// Check login user
+	@GetMapping("/api/checkLoginUser")
+	public boolean checkLoginUser(Principal principal) {
+		Boolean result = ls.checkLoginUser(principal.getName());
+		// when this userUid does not exist in DB
+		if(!result) {
+			// Add this userUid as new user in DB
+			ls.addLoginUser(principal.getName());
+		}
+		return true;
 	}
 
 	// Add new log

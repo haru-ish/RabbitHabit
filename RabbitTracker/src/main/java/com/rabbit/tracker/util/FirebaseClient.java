@@ -6,9 +6,6 @@ import javax.annotation.PreDestroy;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.FirebaseToken;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,12 +26,12 @@ public class FirebaseClient {
 		return FirebaseApp.initializeApp(options);
 	}
 
-	// sysoutが出力されない→使われてない？
-	public FirebaseToken verify(String token) throws FirebaseAuthException {
-		// Token comes from the client app
-		System.out.println(FirebaseAuth.getInstance().verifyIdToken(token));
-		return FirebaseAuth.getInstance().verifyIdToken(token);
-	}
+//	// sysoutが出力されない→使われてない？
+//	public FirebaseToken verify(String token) throws FirebaseAuthException {
+//		// Token comes from the client app
+//		System.out.println(FirebaseAuth.getInstance().verifyIdToken(token));
+//		return FirebaseAuth.getInstance().verifyIdToken(token);
+//	}
 
 	@PreDestroy
 	public void destroy() {

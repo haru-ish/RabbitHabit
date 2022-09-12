@@ -9,6 +9,11 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface LogMapper {
+	
+	// Check login user
+	Boolean checkLoginUser(String userUid);
+	// Add login user
+	int addLoginUser(String userUid);
 	// Get All Log info
 	List<LogEntity> getAllLog(String userUid);
     // Add new log
@@ -17,5 +22,7 @@ public interface LogMapper {
 	boolean delete(LogForm form);
 	// Edit the log
 	boolean edit(LogForm form);
+	
+	
 
 }

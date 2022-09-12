@@ -15,7 +15,15 @@ import com.rabbit.tracker.mapper.LogMapper;
 public class LogService {
 	@Autowired
 	private LogMapper logMapper;
-
+    
+	// Check login user
+	public Boolean checkLoginUser(String userUid) {
+		return this.logMapper.checkLoginUser(userUid);
+	}
+	// Add login user
+	public int addLoginUser(String userUid) {
+		return this.logMapper.addLoginUser(userUid);
+	}
 	public List<LogEntity> getAllLog(String userUid) {
 		return this.logMapper.getAllLog(userUid);
 	}
@@ -32,6 +40,9 @@ public class LogService {
 	public boolean edit(LogForm form) {
 		return this.logMapper.edit(form);
 	}
+
+    
+	
 	
 	
 
