@@ -16,11 +16,11 @@ h1 {
     font-weight: 400;
   }
 
-  h2 {
+  /* h2 {
     font-family: 'Dosis', sans-serif;
     font-weight: 400;
     margin-top: 10px;
-  }
+  } */
   span {
     font-family: 'Edu VIC WA NT Beginner', cursive;
     font-weight: 500;
@@ -28,4 +28,8 @@ h1 {
   }
   .firebaseui-idp-google>.firebaseui-idp-text {
     font-family: Roboto,Helvetica,Arial,sans-serif;
+}
+.font {
+  font-family: Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 500;
 }
