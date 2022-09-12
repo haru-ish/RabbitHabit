@@ -103,7 +103,7 @@ export default {
   },
   created () {
     let parent = this
-    // Check Login Status
+    // Check Login User
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
         user.getIdToken().then(function (idToken) {
@@ -113,7 +113,7 @@ export default {
               'Authorization': 'Bearer ' + parent.$store.getters.getToken
             }
           }
-          axios.get('http://localhost:8080/api/checkLoginStatus', headers).then(res => {
+          axios.get('http://localhost:8080/api/checkLoginUser', headers).then(res => {
             parent.loading = false
             parent.displayName = user.displayName
           })
