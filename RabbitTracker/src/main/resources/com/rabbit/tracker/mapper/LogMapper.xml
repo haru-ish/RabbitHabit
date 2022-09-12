@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.rabbit.tracker.mapper.LogMapper">
-
+	<select id="checkLoginUser" resultType="java.lang.Boolean">
+       SELECT 
+       EXISTS
+       (SELECT 
+        * 
+       FROM 
+       log_user 
+       WHERE 
+       user_uid = #{userUid}) AS check_loginUser
+	</select>
+	<insert id="addLoginUser" parameterType="java.lang.String">
+		INSERT
+		INTO log_user(
+		user_uid
+		)
+		VALUES(
+		#{userUid}
+		)
+	</insert>
 	<insert id="create" parameterType="com.rabbit.tracker.form.LogForm" useGeneratedKeys="true" keyProperty="id">
 		INSERT
 		INTO log_info(
