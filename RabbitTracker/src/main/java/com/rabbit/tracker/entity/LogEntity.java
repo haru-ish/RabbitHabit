@@ -16,6 +16,7 @@ public class LogEntity {
 	private String memo;
 	private Date date;
 	private int id;
+	private int userId;
 	private String userUid;
 	private int deleteFlg; 
 	
