@@ -1,5 +1,15 @@
 .login {
-    background-color: #effdf6;
+    /* background-color: #effdf6; */
+    background: linear-gradient(0deg, rgba(239,253,246,1) 0%, rgba(181,254,151,1) 100%);
+
+}
+.rabbit {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: #212549;
+    /* color:#FF7F50;
+    color:#8B4513; */
 }
 .firebaseui-idp-icon {
     height: 20px;
@@ -10,14 +20,22 @@
     min-height: 60px;
     padding: 8px 50px;
 }
-.firebaseui-idp-google>.firebaseui-idp-text {
-    color: rgb(9, 104, 37);
-}
 .firebaseui-idp-text {
     font-size: 18px;
 }
 .mdl-button {
     border-radius: 5px;
+}
+.footer-item {
+    color: rgb(9, 104, 37);
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    margin-left: 0.75rem !important;
+    margin-right: 0.75rem !important;
+}
+footer.footer a {
+    color: #7a7a7a;
 }
 .style_1 {
     margin-top: 40px;
