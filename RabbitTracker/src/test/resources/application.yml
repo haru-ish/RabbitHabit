@@ -1,0 +1,25 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+          issuer-uri: https://securetoken.google.com/rabbit-tracker-51700
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rabbitdb?serverTimezone=UTC
+    username: postgres
+    password: postgres
+  sql:
+    init:
+      encoding: UTF-8
+  test:
+     database:
+       replace: none
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+
+ 
+  
