@@ -22,7 +22,5 @@ public interface LogMapper {
 	boolean delete(LogForm form);
 	// Edit the log
 	boolean edit(LogForm form);
-	
-	
 
 }
