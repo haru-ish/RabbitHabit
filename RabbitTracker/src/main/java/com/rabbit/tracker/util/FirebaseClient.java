@@ -26,13 +26,6 @@ public class FirebaseClient {
 		return FirebaseApp.initializeApp(options);
 	}
 
-//	// sysoutが出力されない→使われてない？
-//	public FirebaseToken verify(String token) throws FirebaseAuthException {
-//		// Token comes from the client app
-//		System.out.println(FirebaseAuth.getInstance().verifyIdToken(token));
-//		return FirebaseAuth.getInstance().verifyIdToken(token);
-//	}
-
 	@PreDestroy
 	public void destroy() {
 		FirebaseApp.getInstance().delete();
