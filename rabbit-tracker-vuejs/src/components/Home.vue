@@ -194,9 +194,8 @@ export default {
       log.date = this.formatDate(log.date)
       // Modify title of the log in logs
       this.items.some((object) => {
-        if (object.startDate.startsWith(this.formatDate(log.date))) {
+        if (object.startDate.startsWith(log.date)) {
           object.title = this.emojiMap.get(log.mood)
-          console.log(object.startDate)
           return true
         }
       })
