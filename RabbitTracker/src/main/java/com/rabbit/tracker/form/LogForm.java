@@ -4,7 +4,7 @@ import lombok.Data;
 
 import java.util.Date;
 
-import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.Range;
@@ -21,11 +21,12 @@ public class LogForm {
 	private int selectedThree;
 	@Length(max= 100 )
 	private String memo;
+	@NotNull
 	private Date date;
-	private int id;
-	private int userId;
 	private String userUid;
 	private int deleteFlg; 
+	private int id;
+	private int userId;
 
 }
 
