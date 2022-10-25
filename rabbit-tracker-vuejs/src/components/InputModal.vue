@@ -130,7 +130,6 @@ export default {
       }
       // Modify for DB
       this.writeLog.date = new Date(this.selectedDate - this.selectedDate.getTimezoneOffset() * 60000)
-
       const d = new URLSearchParams()
       Object.keys(this.writeLog).forEach(key => {
         d.append(key, this.writeLog[key])
@@ -143,17 +142,18 @@ export default {
           }
         }).then(res => {
           // Result for validation errors from back-end
-          if (res.data === 0) {
+          if (res.data === 1) {
             this.errorMsg = 'There is an input error.'
-            return true
+            this.showModal()
+          } else {
+            // Auto-generated value as id from DB
+            this.writeLog.id = res.data
+            // Back to Home.vue
+            this.$emit('add', this.writeLog)
+            // Hide the modal
+            this.$refs['input-modal'].hide()
           }
-          // Auto-generated value as id from DB
-          this.writeLog.id = res.data
         })
-        // Back to Home.vue
-        this.$emit('add', this.writeLog)
-        // Hide the modal
-        this.$refs['input-modal'].hide()
         return true
       }
       // Update the log
@@ -165,13 +165,14 @@ export default {
         // Result for validation errors from back-end
         if (!res.data) {
           this.errorMsg = 'There is an input error.'
-          return true
+          this.showModal()
+        } else {
+          // Back to Home.vue
+          this.$emit('update', this.writeLog)
+          // Hide the modal
+          this.$refs['input-modal'].hide()
         }
       })
-      // Back to Home.vue
-      this.$emit('update', this.writeLog)
-      // Hide the modal
-      this.$refs['input-modal'].hide()
     }
   }
 }
