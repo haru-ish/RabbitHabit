@@ -2,7 +2,7 @@
   <div class="login">
     <div class="text-center">
       <div class="background">
-      <img src="../assets/images/usasan.svg" class="img-fluid" width="150" height="150" alt="Image" style="margin:50px 20px 10px;">
+      <img src="../assets/images/rabbit.svg" class="img-fluid" width="150" height="150" alt="Image" style="margin:50px 20px 10px;">
       <h1 style="color: rgb(9, 104, 37);">Rabbit Habit</h1>
       <p >We help build and keep positive <span style="color:#FF7F50; font-weight: 600;">Mood</span> and <span style="color:rgb(69 176 244); font-weight: 600;">Habits</span></p>
       <div class="style_1">
