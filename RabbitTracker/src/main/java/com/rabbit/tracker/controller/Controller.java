@@ -2,6 +2,8 @@ package com.rabbit.tracker.controller;
 
 import java.security.Principal;
 import java.util.List;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -47,8 +49,7 @@ public class Controller {
 
 	// Update the log
 	@PostMapping("/api/edit")
-	public boolean edit(LogForm form, BindingResult result, Principal principal) {
-		System.out.println(form);
+	public boolean edit(@Validated LogForm form, BindingResult result, Principal principal) {
 		form.setUserUid(principal.getName());
 		// Check for validations
 		if (result.hasErrors()) {
@@ -69,7 +70,6 @@ public class Controller {
 	// Get TodoList
 	@GetMapping("/api/getAllLog")
 	public List<LogEntity> getAllLog(Principal principal) {
-		// firebase uidからユーザを検索してそのIDを返すことに変えるべき
 		return ls.getAllLog(principal.getName());
 	}
 
