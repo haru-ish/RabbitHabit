@@ -25,10 +25,37 @@ We are glad **Rabbit Habit** will be useful you take a moment to reflect on how 
 https:// XXXXXXXXXXXX
 
 ## Run your own server
+
+### Preparation
+- Install  Java 1.8 or higher version
+- Install Node.js / npm
+- Clone Repository
 ```
-$ XXXXXXX
-$ XXXXXXX
+$ git clone https://github.com/haru-ish/RabbitHabit.git
+  
+$ cd RabbitHabit
 ```
+### Installation and Usage
+Build front-end environment:
+```
+$ cd RabbitHabit/rabbit-tracker-vuejs
+
+$ npm install
+```
+Run back-end server:
+```
+$ 
+
+$ 
+```
+Run front-end Web Page:
+```
+$ cd RabbitHabit/rabbit-tracker-vuejs
+
+$ npm run dev
+```
+
+
 
 
 
