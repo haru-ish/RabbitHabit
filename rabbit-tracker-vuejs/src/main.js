@@ -7,17 +7,10 @@ import store from './store'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import firebaseConfig from './firebaseConfig'
 
 import firebase from 'firebase'
 
-const firebaseConfig = {
-  apiKey: '',
-  authDomain: '',
-  projectId: '',
-  storageBucket: '',
-  messagingSenderId: '',
-  appId: ''
-}
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig)
 
