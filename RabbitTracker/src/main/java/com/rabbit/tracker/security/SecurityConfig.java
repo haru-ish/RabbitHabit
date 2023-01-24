@@ -18,12 +18,13 @@ public class SecurityConfig {
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		// Setting cors
 		http.cors().configurationSource(this.corsConfigurationSource());
+		http.authorizeRequests().antMatchers("/*", "/static/**").permitAll();
 		// Authentication
 		http.authorizeRequests().anyRequest().authenticated();
 		// Ignore CSRF to use cookies
 		http.csrf().ignoringAntMatchers("/api/**");
-		
-       http.oauth2ResourceServer().jwt();
+
+		http.oauth2ResourceServer().jwt();
 
 		return http.build();
 	}

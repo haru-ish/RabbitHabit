@@ -22,7 +22,7 @@ public class Controller {
 
 	@Autowired
 	private LogService ls;
-    
+
 	// Check login user
 	@GetMapping("/api/checkLoginUser")
 	public boolean checkLoginUser(Principal principal) {
