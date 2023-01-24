@@ -16,7 +16,6 @@ import com.rabbit.tracker.entity.LogEntity;
 import com.rabbit.tracker.form.LogForm;
 import com.rabbit.tracker.service.LogService;
 
-@CrossOrigin("http://localhost:8081")
 @RestController
 public class Controller {
 
