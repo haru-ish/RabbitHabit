@@ -32,8 +32,8 @@
         </video>
       </div>
       </div>
-      <footer><div class="footer-item">©️ 2022 haru-ish
-        <a class="footer-item" href="https://github.com/taka61/chiikoma"><b-icon-github></b-icon-github></a></div>
+      <footer><div class="footer-item">©️ 2023 haru-ish
+        <a class="footer-item" href="https://github.com/haru-ish/RabbitHabit"><b-icon-github></b-icon-github></a></div>
       </footer>
     </div>
   </div>

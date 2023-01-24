@@ -113,7 +113,7 @@ export default {
               'Authorization': 'Bearer ' + parent.$store.getters.getToken
             }
           }
-          axios.get('http://localhost:8080/api/checkLoginUser', headers).then(res => {
+          axios.get('/api/checkLoginUser', headers).then(res => {
             parent.loading = false
             parent.displayName = user.displayName
           })
@@ -202,7 +202,7 @@ export default {
     },
     // From DB, Get All Data of Logs
     getAllLog: function () {
-      axios.get('http://localhost:8080/api/getAllLog', {
+      axios.get('/api/getAllLog', {
         headers: {'Authorization': 'Bearer ' + this.$store.getters.getToken}
       }).then(res => {
         this.allLogs = res.data

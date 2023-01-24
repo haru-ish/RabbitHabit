@@ -71,7 +71,7 @@ export default {
       // Delete the log in DB
       const d = new URLSearchParams()
       d.append('id', this.logsOfTheDay.id)
-      axios.post('http://localhost:8080/api/delete', d, {
+      axios.post('/api/delete', d, {
         headers: {
           'Authorization': 'Bearer ' + this.$store.getters.getToken
         }

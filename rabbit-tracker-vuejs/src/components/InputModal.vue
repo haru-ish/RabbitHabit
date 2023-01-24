@@ -136,7 +136,7 @@ export default {
       })
       // Insert a new log in DB
       if (this.writeLog.id === undefined) {
-        axios.post('http://localhost:8080/api/create', d, {
+        axios.post('/api/create', d, {
           headers: {
             'Authorization': 'Bearer ' + this.$store.getters.getToken
           }
@@ -157,7 +157,7 @@ export default {
         return true
       }
       // Update the log
-      axios.post('http://localhost:8080/api/edit', d, {
+      axios.post('/api/edit', d, {
         headers: {
           'Authorization': 'Bearer ' + this.$store.getters.getToken
         }
