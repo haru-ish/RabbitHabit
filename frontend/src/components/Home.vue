@@ -13,7 +13,7 @@
             </b-button>
           </b-navbar-nav>
           <b-navbar-nav class="collapse navbar-collapse justify-content-center">
-            <b-nav-text>Hello haru-ish</b-nav-text>
+            <b-nav-text>Hello {{ displayName }}</b-nav-text>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>

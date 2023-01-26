@@ -45,7 +45,7 @@
         ></b-form-radio-group>
       </b-form-group>
       <img src="../assets/images/line.svg">
-      <b-form-group label="😴 Did you have a nap?" v-slot="{ ariaDescribedby }" class="style_2">
+      <b-form-group label="😴 Did you take a nap?" v-slot="{ ariaDescribedby }" class="style_2">
         <b-form-radio-group
           id="radio-group-3"
           v-model="writeLog.selectedThree"

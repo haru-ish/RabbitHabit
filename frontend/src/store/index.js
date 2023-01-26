@@ -7,6 +7,7 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state () {
     return {
+      // This is JWT that used to identify the user to a Firebase service
       token: ''
     }
   },
