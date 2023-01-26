@@ -69,15 +69,15 @@ footer.footer a {
 }
 
 .cv-week, .cv-weekdays {
-    min-height: 8em
+    min-height: 8em !important
 }
 
 .cv-header, .cv-header button {
-    border-style: solid;
-    border-color: white;
+    border-style: solid !important;
+    border-color: white !important;
 }
 .theme-default .cv-header, .theme-default .cv-header-day {
-    background-color: white;
+    background-color: white !important;
 }
 
 .modal-title {
@@ -85,11 +85,11 @@ footer.footer a {
     color: white;
 }
 .theme-default .cv-item {
-    border-color: transparent;
-    border-radius: 0.5em;
-    background-color: transparent;
-    text-overflow: ellipsis;
-    font-size: 30px;
+    border-color: transparent !important;
+    border-radius: 0.5em !important;
+    background-color: transparent !important;
+    text-overflow: ellipsis !important;
+    font-size: 30px !important;
 }
 .btn-success:not(:disabled):not(.disabled).focus {
     outline: none !important;

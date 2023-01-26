@@ -62,9 +62,7 @@ import axios from 'axios'
 
 import InputModal from '../components/InputModal.vue'
 import DetailModal from '../components/DetailModal.vue'
-
 import { CalendarView, CalendarViewHeader } from 'vue-simple-calendar'
-require('vue-simple-calendar/static/css/default.css')
 
 export default {
   name: 'Home',
