@@ -4,22 +4,19 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
-          issuer-uri: https://securetoken.google.com/rabbit-tracker-51700
+          issuer-uri: https://securetoken.google.com/XXXX-XXXXX
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/rabbitdb?serverTimezone=UTC
-    username: postgres
-    password: postgres
+    url: jdbc:postgresql://localhost:5432/rabbitdb?serverTimezone=UTC 
+    username: rabbitdb
+    password: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
   sql:
     init:
       encoding: UTF-8
-  test:
-     database:
-       replace: none
+  web:
+     resources:
+       static-locations:
+       - classpath:/frontend/
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
-
-
- 
-  
