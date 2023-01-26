@@ -1,5 +1,5 @@
 # Rabbit Habit
-![RabbitHabit-Logo](https://github.com/haru-ish/RabbitHabit/blob/master/rabbit-tracker-vuejs/src/assets/images/rabbit.svg)
+![RabbitHabit-Logo](https://github.com/haru-ish/RabbitHabit/blob/master/frontend/src/assets/images/rabbit.svg)
 
 ## Introduction
 **Rabbit Habit** is an app for recording daily mood and habits.
