@@ -16,8 +16,6 @@ buildNumber.properties
 
 # Sensitive Files
 src/main/resources/service-account-file.json
-src/main/resources/application.yml
-src/test/resources/application.yml
 
 
 ### STS ###
