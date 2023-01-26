@@ -25,9 +25,9 @@ https:// XXXXXXXXXXXX
 
 ## Run your own server
 
-### Preparation
+### Preparation and Installation
 1. Clone Repository
-```
+```shell
 $ git clone https://github.com/haru-ish/RabbitHabit.git
   
 $ cd RabbitHabit
@@ -39,19 +39,25 @@ $ cd RabbitHabit
 
 4. Add config from firebase at project-settings -> general -> your apps -> SDK setup and configuration -> Config to "frontend/  src/firebaseConfig.js"
 
-5. Setup postgresql with user rabbitdb and database rabbitdb
+5. Setup postgresql with user `rabbitdb` and database `rabbitdb`
 
 6. Import schema with `psql -U rabbitdb rabbitdb < schema.sql`
 
-<!-- - Install  Java 1.8 or higher version
-- Install Node.js / npm -->
+7. Install Maven: `$ mvn install`
 
-### Installation and Usage
-Complile and run back-end server:
-```
-$ mvn install
-
-$ java -jar target/RabbitTracker-0.0.1-SNAPSHOT.jar --server.port=XXXX
+### Usage
+Execute the compiled jar file to start the server with custom parameters ( the frontend is included in the jar and served automatically ):
+```shell
+$ java -jar target/RabbitTracker-0.0.1-SNAPSHOT.jar \
+   --server.port=XXXX \
+   --spring.web.resources.static-locations=classpath:/frontend/ \
+   --spring.datasource.driver-class-name=org.postgresql.Driver \
+   --spring.datasource.url="jdbc:postgresql://localhost:5432/rabbitdb?serverTimezone=UTC" \
+   --spring.datasource.username="rabbitdb" \
+   --spring.datasource.password="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
+   --spring.sql.init.encoding="UTF-8" \
+   --spring.security.oauth2.resourceserver.jwt.jwk-set-uri="https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com" \
+   --spring.security.oauth2.resourceserver.jwt.issuer-uri="https://securetoken.google.com/XXXX-XXXXX"
 ```
 Accese to front-end Web Page:
 ```
