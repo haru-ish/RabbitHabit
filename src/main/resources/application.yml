@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
+          issuer-uri: https://securetoken.google.com/XXXX-XXXXX
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rabbitdb?serverTimezone=UTC 
+    username: rabbitdb
+    password: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  sql:
+    init:
+      encoding: UTF-8
+  web:
+     resources:
+       static-locations:
+       - classpath:/frontend/
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
