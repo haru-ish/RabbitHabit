@@ -6,7 +6,7 @@
 
 Recording your mood on a daily basis can help you to understand your current mental state.
 
-And we will support you create habits that will keep you in good mental shape.
+This app will support you to create habits that will keep you in good mental shape.
 
 Record whether you have done the good habits along with how you feel today!
 
@@ -18,44 +18,42 @@ https://user-images.githubusercontent.com/108800859/198259491-639cf6cd-8112-4cb0
 
 
 
-We are glad **Rabbit Habit** will be useful you take a moment to reflect on how you felt today and what you did to make yourself happy. :green_heart:
+We hope **Rabbit Habit** will be useful to you take a moment to reflect on how you felt today and what you did to make yourself happy. :green_heart:
 
-## Website
-
+## Demo
 https:// XXXXXXXXXXXX
 
 ## Run your own server
 
 ### Preparation
-- Install  Java 1.8 or higher version
-- Install Node.js / npm
-- Clone Repository
+1. Clone Repository
 ```
 $ git clone https://github.com/haru-ish/RabbitHabit.git
   
 $ cd RabbitHabit
 ```
+2. Create firebase project
+
+3. Download service account file from firebase at project settings -> service account -> generate new key \
+   Add this file as service-account-file.json to classpath "src/main/resources"
+
+4. Add config from firebase at project-settings -> general -> your apps -> SDK setup and configuration -> Config to "frontend/  src/firebaseConfig.js"
+
+5. Setup postgresql with user rabbitdb and database rabbitdb
+
+6. Import schema with `psql -U rabbitdb rabbitdb < schema.sql`
+
+<!-- - Install  Java 1.8 or higher version
+- Install Node.js / npm -->
+
 ### Installation and Usage
-Build front-end environment:
+Complile and run back-end server:
 ```
-$ cd RabbitHabit/rabbit-tracker-vuejs
+$ mvn install
 
-$ npm install
+$ java -jar target/RabbitTracker-0.0.1-SNAPSHOT.jar --server.port=XXXX
 ```
-Run back-end server:
+Accese to front-end Web Page:
 ```
-$ 
-
-$ 
+localhost:XXXX
 ```
-Run front-end Web Page:
-```
-$ cd RabbitHabit/rabbit-tracker-vuejs
-
-$ npm run dev
-```
-
-
-
-
-
