@@ -15,17 +15,17 @@
       <div class="style_3"></div>
       <h2 style="font-size: 1.6rem;">✍ <span class="rabbit" style="color: rgb(9, 104, 37);">Rabbit Habit </span>is...</h2>
       <div class="style_3"></div>
-      <p>an app for recording daily mood and habits.</p>
+      <p>an app for tracking your daily mood and habits.</p>
       <p>Recording your mood on a daily basis can help you to understand your current mental state.</p>
-      <p>This app will support you to create habits that will keep you in good mental shape.</p>
+      <p>This app will help you to create habits that will keep you in good mental shape.</p>
       <p>Record whether you have done the good habits along with how you feel today!</p>
       <div class="style_2">
         <video playsinline autoplay loop muted>
           <source src="../assets/videos/RabbitHabit_input.mp4" type="video/mp4">
         </video>
       </div>
-      <p>We hope<span class="rabbit" style="color: rgb(9, 104, 37);"> Rabbit Habit </span>will be useful</p>
-      <p>to take a moment to reflect on how you felt today and what you did to make yourself happy. 💚</p>
+      <p>We hope<span class="rabbit" style="color: rgb(9, 104, 37);"> Rabbit Habit </span>will help you</p>
+      <p>take a moment to reflect on how you felt today and what you did to make yourself happy. 💚</p>
       <div class="style_2">
         <video playsinline autoplay loop muted>
           <source src="../assets/videos/RabbitHabit_detail.mp4" type="video/mp4">
