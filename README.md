@@ -2,11 +2,11 @@
 ![RabbitHabit-Logo](https://github.com/haru-ish/RabbitHabit/blob/master/frontend/src/assets/images/rabbit.svg)
 
 ## Introduction
-**Rabbit Habit** is an app for recording daily mood and habits.
+**Rabbit Habit** is an app for tracking your daily mood and habits.
 
 Recording your mood on a daily basis can help you to understand your current mental state.
 
-This app will support you to create habits that will keep you in good mental shape.
+This app will help you to create habits that will keep you in good mental shape.
 
 Record whether you have done the good habits along with how you feel today!
 
@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/108800859/198259491-639cf6cd-8112-4cb0
 
 
 
-We hope **Rabbit Habit** will be useful to you take a moment to reflect on how you felt today and what you did to make yourself happy. :green_heart:
+We hope **Rabbit Habit** will help you take a moment to reflect on how you felt today and what you did to make yourself happy. :green_heart:
 
 ## Demo
 https:// XXXXXXXXXXXX
@@ -34,32 +34,50 @@ $ cd RabbitHabit
 ```
 2. Create firebase project
 
-3. Download service account file from firebase at project settings -> service account -> generate new key \
-   Add this file as service-account-file.json to classpath "src/main/resources"
+3. Download service account file from firebase terminal at `project settings -> service account -> generate new key`. Add this file to the classpath as `src/main/resources/service-account-file.json`
 
-4. Add config from firebase at project-settings -> general -> your apps -> SDK setup and configuration -> Config to "frontend/  src/firebaseConfig.js"
+4. Add config from firebase terminal at `project-settings -> general -> your apps -> SDK setup and configuration -> Config` to `frontend/src/firebaseConfig.js`
 
-5. Setup postgresql with user `rabbitdb` and database `rabbitdb`
+5. (optional, necessary to run tests) Update both `application.yml` in `src/main/resources` and `src/test/resources` (they can be replaced by the command-line parameters below under *Running the server: Locally*)
 
-6. Import schema with `psql -U rabbitdb rabbitdb < schema.sql`
+6. Compile the project: `$ mvn install -Dmaven.test.skip=true` (if you updated `src/test/resources/application.yml` and started the postgres server as described below, you can omit `-Dmaven.test.skip=true` in order to run the tests)
 
-7. Install Maven: `$ mvn install`
+#### When running locally...
 
-### Usage
-Execute the compiled jar file to start the server with custom parameters ( the frontend is included in the jar and served automatically ):
+7. Install postgresql and setup user `rabbitdb` and database `rabbitdb`
+
+8. Import the schema with `psql -U rabbitdb rabbitdb < schema.sql`
+
+#### When running Docker...
+
+7. Build the docker image: `docker build -t rabbit-habit .`
+
+8. Create a volume to store a persistent database: `docker volume create rabbitdb`
+
+
+### Running the server
+
+#### Locally
+Execute the compiled jar file to start the server with custom parameters (the frontend is included in the jar and served automatically):
 ```shell
 $ java -jar target/RabbitTracker-0.0.1-SNAPSHOT.jar \
-   --server.port=XXXX \
+   --server.port=4278 \
    --spring.web.resources.static-locations=classpath:/frontend/ \
    --spring.datasource.driver-class-name=org.postgresql.Driver \
    --spring.datasource.url="jdbc:postgresql://localhost:5432/rabbitdb?serverTimezone=UTC" \
    --spring.datasource.username="rabbitdb" \
-   --spring.datasource.password="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
+   --spring.datasource.password="your-password-here" \
    --spring.sql.init.encoding="UTF-8" \
    --spring.security.oauth2.resourceserver.jwt.jwk-set-uri="https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com" \
-   --spring.security.oauth2.resourceserver.jwt.issuer-uri="https://securetoken.google.com/XXXX-XXXXX"
+   --spring.security.oauth2.resourceserver.jwt.issuer-uri="https://securetoken.google.com/your-firebase-id"
 ```
-Accese to front-end Web Page:
+
+#### Docker
+Run the (previously built) docker container using:
+
+```shell
+$ docker run -it --rm --name=rabbit-habit -e FIREBASE_ID=your-firebase-id -v rabbitdb:/var/lib/postgresql/data -p 4278:4278 rabbit-habit
 ```
-localhost:XXXX
-```
+
+
+Access the front-end Web page at: http://localhost:4278

@@ -4,12 +4,12 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com
-          issuer-uri: https://securetoken.google.com/XXXX-XXXXX
+          issuer-uri: https://securetoken.google.com/your-firebase-id
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/rabbitdb?serverTimezone=UTC 
     username: rabbitdb
-    password: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    password: your-password-here
   sql:
     init:
       encoding: UTF-8
