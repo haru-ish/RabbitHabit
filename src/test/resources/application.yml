@@ -13,10 +13,9 @@ spring:
   sql:
     init:
       encoding: UTF-8
-  web:
-     resources:
-       static-locations:
-       - classpath:/frontend/
+  test:
+    database:
+      replace: none
 mybatis:
   configuration:
     map-underscore-to-camel-case: true
