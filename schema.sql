@@ -89,6 +89,44 @@ ALTER SEQUENCE public.log_user_id_seq OWNED BY public.log_user.id;
 
 
 --
+-- Name: log_info id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.log_info ALTER COLUMN id SET DEFAULT nextval('public.log_info_id_seq'::regclass);
+
+
+--
+-- Name: log_user id; Type: DEFAULT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.log_user ALTER COLUMN id SET DEFAULT nextval('public.log_user_id_seq'::regclass);
+
+
+--
+-- Name: log_info log_info_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.log_info
+    ADD CONSTRAINT log_info_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: log_user log_user_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.log_user
+    ADD CONSTRAINT log_user_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: log_user user_uid_unique; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY public.log_user
+    ADD CONSTRAINT user_uid_unique UNIQUE (user_uid);
+
+
+--
 -- PostgreSQL database dump complete
 --
 
