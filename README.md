@@ -34,25 +34,26 @@ $ cd RabbitHabit
 ```
 2. Create firebase project
 
-3. Download service account file from firebase terminal at `project settings -> service account -> generate new key`. Add this file to the classpath as `src/main/resources/service-account-file.json`
+3. Download service account file from firebase terminal at `Project settings -> Service accounts -> Generate new private key`. Add this file to the classpath as `src/main/resources/service-account-file.json`
 
-4. Add config from firebase terminal at `project-settings -> general -> your apps -> SDK setup and configuration -> Config` to `frontend/src/firebaseConfig.js`
+4. Add config from firebase terminal at `Project-settings -> General -> Your apps -> SDK setup and configuration -> Config` to `frontend/src/firebaseConfig.js`
 
-5. (optional, necessary to run tests) Update both `application.yml` in `src/main/resources` and `src/test/resources` (they can be replaced by the command-line parameters below under *Running the server: Locally*)
+5. (optional, necessary to run tests) Update both `application.yml` in `src/main/resources` and `src/test/resources` (they can be replaced with the command-line parameters in *Running the server: Locally*)
 
-6. Compile the project: `$ mvn install -Dmaven.test.skip=true` (if you updated `src/test/resources/application.yml` and started the postgres server as described below, you can omit `-Dmaven.test.skip=true` in order to run the tests)
+6. Compile the project: `$ mvn install -Dmaven.test.skip=true` (if you have updated `src/test/resources/application.yml` and started the PostgreSQL as described below, you can omit `-Dmaven.test.skip=true` in order to run the tests)
 
 #### When running locally...
 
-7. Install postgresql and setup user `rabbitdb` and database `rabbitdb`
+7. Install PostgreSQL and setup user as `rabbitdb` and database as `rabbitdb`
 
-8. Import the schema with `psql -U rabbitdb rabbitdb < schema.sql`
+8. Import the schema with `schema.sql`
+<!-- `psql -U rabbitdb rabbitdb < schema.sql` -->
 
 #### When running Docker...
 
-7. Build the docker image: `docker build -t rabbit-habit .`
+7. Build the Docker image: `$ docker build -t rabbit-habit .`
 
-8. Create a volume to store a persistent database: `docker volume create rabbitdb`
+8. Create a volume to store a persistent database: `$ docker volume create rabbitdb`
 
 
 ### Running the server
@@ -66,14 +67,14 @@ $ java -jar target/RabbitTracker-0.0.1-SNAPSHOT.jar \
    --spring.datasource.driver-class-name=org.postgresql.Driver \
    --spring.datasource.url="jdbc:postgresql://localhost:5432/rabbitdb?serverTimezone=UTC" \
    --spring.datasource.username="rabbitdb" \
-   --spring.datasource.password="your-password-here" \
+   --spring.datasource.password="your-database-password" \
    --spring.sql.init.encoding="UTF-8" \
    --spring.security.oauth2.resourceserver.jwt.jwk-set-uri="https://www.googleapis.com/service_accounts/v1/jwk/securetoken@system.gserviceaccount.com" \
-   --spring.security.oauth2.resourceserver.jwt.issuer-uri="https://securetoken.google.com/your-firebase-id"
+   --spring.security.oauth2.resourceserver.jwt.issuer-uri="https://securetoken.google.com/your-firebase-projectId"
 ```
 
 #### Docker
-Run the (previously built) docker container using:
+Run the (previously built) Docker container using:
 
 ```shell
 $ docker run -it --rm --name=rabbit-habit -e FIREBASE_ID=your-firebase-id -v rabbitdb:/var/lib/postgresql/data -p 4278:4278 rabbit-habit
