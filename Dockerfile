@@ -13,4 +13,4 @@ CMD ["rabbit-habit"]
 EXPOSE 4278
 
 ENV POSTGRES_PASSWORD=postgres
-ENV FIREBASE_ID=your-firebase-id
+ENV FIREBASE_ID=your-firebase-projectId
