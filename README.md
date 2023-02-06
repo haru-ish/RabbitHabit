@@ -21,7 +21,7 @@ https://user-images.githubusercontent.com/108800859/198259491-639cf6cd-8112-4cb0
 We hope **Rabbit Habit** will help you take a moment to reflect on how you felt today and what you did to make yourself happy. :green_heart:
 
 ## Demo
-https:// XXXXXXXXXXXX
+https://rabbit-habit.haruish.de
 
 ## Run your own server
 
@@ -77,7 +77,7 @@ $ java -jar target/RabbitTracker-0.0.1-SNAPSHOT.jar \
 Run the (previously built) Docker container using:
 
 ```shell
-$ docker run -it --rm --name=rabbit-habit -e FIREBASE_ID=your-firebase-id -v rabbitdb:/var/lib/postgresql/data -p 4278:4278 rabbit-habit
+$ docker run -it --rm --name=rabbit-habit -e FIREBASE_ID=your-firebase-projectId -v rabbitdb:/var/lib/postgresql/data -p 4278:4278 rabbit-habit
 ```
 
 
